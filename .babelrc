@@ -1,0 +1,16 @@
+//* NOTE: .babelrc is a configurstion file.
+// with options
+{
+  //Removes console.log()
+  // "plugins": [
+  //     ["transform-remove-console", {
+  //         "exclude": ["error", "warn"]
+  //     }]
+  // ]
+
+  "presets": [
+    //Configure for ES6(import) statements in tesing
+    // ["@babel/preset-env", { "targets": { "node": "current" } }],
+    // ["@babel/preset-react", { "runtime": "automatic" }]
+  ]
+}

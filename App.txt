@@ -1,0 +1,51 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+console.log("checking console logs...");
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+//-----------------------------------------------------------------------
+//!  React Elements => are a javascript Object
+//! React Components => are a javascript function, which returns react elements or its nested structures.
+//-----------------------------------------------------------------------
+
+const Heading = React.createElement("h2", { key: 2223 }, "Inner Text"); //? React.createElement() returns an object.
+console.log(Heading);
+Heading.innerText = "namaste ji,";
+
+const Container = React.createElement(
+  "div",
+  { id: "container", className: "", style: { color: "red" } },
+  ["Namaste React", Heading]
+);
+
+root.render(Container);
+//========================================================================
+
+const title = <h1> Title of the site</h1>; ///* JSX's ways of creating react elements i-e javascript object.
+/? title => Bable => React.createElement() => HTML. */ /* verify it on bable website */
+root.render(title);
+//========================================================================
+
+const FirstComponent = (props) => {
+  
+  
+  const divStyle = {
+    color: "blue",
+  };
+  
+  return (
+    // <div style={divStyle}>
+    <div style={{color:'red', fontWeight:"bold"}}>
+      <h1 className="heading1">My First React Component</h1>
+      {props.name}
+      {/* {props.key}   key is not a props*/}
+    </div>
+  );
+};
+
+//-----------------------------------------------------------------------
+root.render(<FirstComponent></FirstComponent>);
+root.render(<FirstComponent key={123} name={"satyam tiwari"} />);
+//========================================================================
